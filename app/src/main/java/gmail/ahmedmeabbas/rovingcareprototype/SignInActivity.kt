@@ -15,7 +15,6 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.appcompat.app.AlertDialog
@@ -40,9 +39,7 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = Firebase.auth
         auth.useAppLanguage()
-
         setUpViews()
-        Log.d(TAG, "Sign in: onCreate")
     }
 
     private fun setUpViews() {
@@ -229,7 +226,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun navigateToWelcomeActivity() {
-        val intent = Intent(this@SignInActivity, WelcomeActivity::class.java)
+        val intent = Intent(this@SignInActivity, HomeActivity::class.java)
         val displayName = auth.currentUser?.displayName
         intent.putExtra("EXTRA_DISPLAY_NAME", displayName)
         startActivity(intent)
@@ -258,42 +255,14 @@ class SignInActivity : AppCompatActivity() {
         return typedValue.data
     }
 
-    private fun clearSpannableString(textView: TextView) {
-        if (textView.text is SpannableString) {
-            val spannableString = textView.text
-            spannableString.removeRange(0, spannableString.length)
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d(TAG, "Sign in: onStart")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d(TAG, "Sign in: onRestart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d(TAG, "Sign in: onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d(TAG, "Sign in: onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d(TAG, "Sign in: onStop")
+    private fun clearSpannableStrings() {
+        binding.tvSignUpText.text = ""
+        binding.tvForgotPassword.text = ""
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        binding.tvSignUpText.text = ""
-        binding.tvForgotPassword.text = ""
+        clearSpannableStrings()
     }
 
     companion object {

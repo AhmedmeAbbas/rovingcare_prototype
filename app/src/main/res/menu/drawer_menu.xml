@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Navigate">
+        <menu>
+            <item
+                android:icon="@drawable/ic_home"
+                android:title="Home" />
+            <item
+                android:icon="@drawable/ic_requests"
+                android:title="Requests" />
+            <item
+                android:icon="@drawable/ic_feedback"
+                android:title="Messages" />
+        </menu>
+    </item>
+
+    <item android:title="Account">
+        <menu>
+            <item
+                android:icon="@drawable/ic_people"
+                android:title="Manage Users" />
+            <item
+                android:icon="@drawable/ic_settings"
+                android:title="My Account" />
+        </menu>
+    </item>
+
+    <item android:title="App">
+        <menu>
+            <item
+                android:icon="@drawable/ic_language"
+                android:title="Language" />
+            <item
+                android:icon="@drawable/ic_theme"
+                android:title="Theme" />
+        </menu>
+    </item>
+    <item android:title="Support">
+        <menu>
+            <item
+                android:icon="@drawable/ic_phone"
+                android:title="Contact Us" />
+            <item
+                android:icon="@drawable/ic_messages"
+                android:title="Give us your feedback" />
+            <item
+                android:icon="@drawable/ic_faq"
+                android:title="FAQ" />
+        </menu>
+    </item>
+    <item
+        android:icon="@drawable/ic_exit"
+        android:title="Log Out" />
+</menu>

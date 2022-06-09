@@ -50,4 +50,6 @@
     <string name="cancel">Cancel</string>
     <string name="email_resend_action">Resend</string>
     <string name="placeholder_text" translatable="false">Placeholder text</string>
+    <string name="nav_drawer_open" translatable="false">Open</string>
+    <string name="nav_drawer_close" translatable="false">Close</string>
 </resources>
