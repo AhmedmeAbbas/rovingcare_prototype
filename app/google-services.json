@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "746849394788",
+    "project_id": "rovingcareprototype",
+    "storage_bucket": "rovingcareprototype.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746849394788:android:b4f3444be7358931a9bf71",
+        "android_client_info": {
+          "package_name": "gmail.ahmedmeabbas.rovingcareprototype"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746849394788-8abidn8kj51u6lmhgr2hdm3dg7rv522d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "gmail.ahmedmeabbas.rovingcareprototype",
+            "certificate_hash": "822de3832d73c2654d742ee8e6bb94281cff3163"
+          }
+        },
+        {
+          "client_id": "746849394788-o8k5l10ofik25t2hc4nqvg8jvin22hrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEFBqNGXAvaoyYDK_1lLKnnWn43hqNTho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746849394788-o8k5l10ofik25t2hc4nqvg8jvin22hrs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

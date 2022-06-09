@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">RovingCarePrototype</string>
+    <string name="hint_first_name">الاسم الاول</string>
+    <string name="hint_last_name">اسم العائلة</string>
+    <string name="hint_password">كلمة المرور</string>
+    <string name="hint_confirm_password">تأكيد كلمة المرور</string>
+    <string name="hint_email">البريد الالكتروني</string>
+    <string name="hint_phone_number">رقم الهاتف</string>
+    <string name="hint_reset_password">أدخل بريدك الالكتروني</string>
+    <string name="hint_update_email">أدخل البريد الالكتروني الجديد</string>
+    <string name="hint_update_password">كلمة المرور الجديدة</string>
+    <string name="hint_update_password_confirm">تأكيد كلمة المرور الجديدة</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="sign_up">إنشاء حساب</string>
+    <string name="reset_password">إعادة تعيين كلمة المرور</string>
+    <string name="forgot_password">هل نسيت كلمة المرور؟</string>
+    <string name="sign_up_text">لا تملك حسابا؟ إنشاء حساب</string>
+    <string name="ToS">
+        بضغطك على زر إنشاء حساب أنت توافق على شروط الخدمة و بنود الخصوصية الخاصة بنا
+    </string>
+    <string name="update_email">تحديث البريد الالكتروني</string>
+    <string name="update_Password">تحديث كلمة المرور</string>
+    <string name="delete_account">حذف الحساب</string>
+    <string name="password_update_success">تم تحديث كلمة المرور بنجاح</string>
+    <string name="password_update_failure">فشل تحديث كلمة المرور. الرجاء المحاولة مرة اخرى</string>
+    <string name="email_update_success">تم تحديث البريد الالكتروني بنجاح</string>
+    <string name="email_update_failure">فشل تحديث البريد الالكتروني. الرجاء المحاولة مرة اخرى</string>
+    <string name="delete_account_failure">فشل حذف الحساب. الرجاء المحاولة مرة اخرى</string>
+    <string name="welcome">مرحبا</string>
+    <string name="required">مطلوب</string>
+    <string name="no_internet">لا يوجد اتصال بالانترنت</string>
+    <string name="email_reset_success">
+        تم ارسال رابط اعادة التعيين الى بريدك الالكتروني. تأكد من مجلد الرسائل الغير مرغوب فيها
+    </string>
+    <string name="invalid_email_address">عنوان البريد الالكتروني غير صالح</string>
+    <string name="invalid_email_or_password">البريد الالكتروني او كلمة المرور غير صحيح</string>
+    <string name="email_not_verified">
+        لم يتم التحقق من البريد الالكتروني. الرجاء التأكد من مجلد الرسائل الغير مرغوب فيها
+    </string>
+    <string name="email_verification_failure">فشل ارسال رابط التحقق</string>
+    <string name="passwords_do_not_match">كلمة المرور غير مطابقة</string>
+    <string name="verification_email_sent">
+        تم ارسال رابط التحقق الى بريدك الالكتروني. الرجاء التأكد من مجلد الرسائل الغير مرغوب فيها
+    </string>
+    <string name="invalid_phone_number">رقم الهاتف غير صالح</string>
+    <string name="greeting_dafault">نهارك سعيد</string>
+    <string name="greeting_morning">صباح الخير</string>
+    <string name="greeting_afternoon">نهارك سعيد</string>
+    <string name="greeting_evening">مساء الخير</string>
+    <string name="delete_account_dialog_title">هل أنت متأكد من أنك تريد حذف الحساب؟</string>
+    <string name="delete_account_dialog_message">سوف تفقد جميع بياناتك و طلباتك</string>
+    <string name="reset_password_message">سيتم إرسال رسالة إلى بريدك الإلكتروني</string>
+    <string name="confirm">تأكيد</string>
+    <string name="cancel">إلغاء</string>
+    <string name="email_resend_action">إعادة ارسال</string>
+</resources>

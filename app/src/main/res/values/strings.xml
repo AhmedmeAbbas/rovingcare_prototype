@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">RovingCarePrototype</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="hint_reset_password">Enter your email address</string>
+    <string name="hint_update_email">Enter your new email</string>
+    <string name="hint_update_password">Enter your new password</string>
+    <string name="hint_update_password_confirm">Confirm your new password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="sign_up_text">Don\'t have an account? Sign Up</string>
+    <string name="ToS">By clicking Sign Up you agree to our Terms of Service and Privacy Policy</string>
+    <string name="update_email">Update Email</string>
+    <string name="update_Password">Update Password</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="password_update_success">Password updated successfully</string>
+    <string name="password_update_failure">Failed to update your password. Please try again</string>
+    <string name="email_update_success">Email updated successfully</string>
+    <string name="email_update_failure">Failed to update your Email. Please try again</string>
+    <string name="delete_account_failure">Failed to delete your account. Please try again</string>
+    <string name="welcome">Welcome</string>
+    <string name="required">Required</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="email_reset_success">
+        Reset email has been successfully sent to your email address. Check your inbox and spam folder.
+    </string>
+    <string name="invalid_email_address">Invalid email address</string>
+    <string name="invalid_email_or_password">Invalid email address or password</string>
+    <string name="email_not_verified">This email address is not verified. Check your inbox and spam folder.</string>
+    <string name="email_verification_failure">Failed to send verification email</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="verification_email_sent">
+        Verification email has been sent to your email address. Check your inbox and spam folder
+    </string>
+    <string name="invalid_phone_number">Invalid phone number</string>
+    <string name="greeting_dafault">Good day</string>
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="delete_account_dialog_title">Are you sure you want to delete your account?</string>
+    <string name="delete_account_dialog_message">You data and history will be lost</string>
+    <string name="reset_password_message">An email will be sent to your email address</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="email_resend_action">Resend</string>
+    <string name="placeholder_text" translatable="false">Placeholder text</string>
+</resources>
