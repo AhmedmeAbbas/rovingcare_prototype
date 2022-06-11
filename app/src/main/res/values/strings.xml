@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">RovingCarePrototype</string>
+
+            <!-- Authentication -->
     <string name="hint_first_name">First Name</string>
     <string name="hint_last_name">Last Name</string>
     <string name="hint_password">Password</string>
@@ -52,4 +54,21 @@
     <string name="placeholder_text" translatable="false">Placeholder text</string>
     <string name="nav_drawer_open" translatable="false">Open</string>
     <string name="nav_drawer_close" translatable="false">Close</string>
+
+            <!-- Navigation Drawer Menu -->
+    <string name="menu_navigate_title">Navigate</string>
+    <string name="menu_account_title">Account</string>
+    <string name="menu_app_title">App</string>
+    <string name="menu_support_title">Support</string>
+    <string name="menu_home_title">Home</string>
+    <string name="menu_requests_title">Requests</string>
+    <string name="menu_messages_title">Messages</string>
+    <string name="menu_manage_users_title">Manage Users</string>
+    <string name="menu_my_account_title">My Account</string>
+    <string name="menu_language_title">Language</string>
+    <string name="menu_theme_title">Theme</string>
+    <string name="menu_contact_us_title">Contact Us</string>
+    <string name="menu_feedback_title">Issues and Feedback</string>
+    <string name="menu_faq_title">FAQ</string>
+    <string name="menu_logout_title">Log Out</string>
 </resources>

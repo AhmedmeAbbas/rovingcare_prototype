@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">RovingCarePrototype</string>
+
+            <!-- Authentication -->
     <string name="hint_first_name">الاسم الاول</string>
     <string name="hint_last_name">اسم العائلة</string>
     <string name="hint_password">كلمة المرور</string>
@@ -53,4 +55,21 @@
     <string name="confirm">تأكيد</string>
     <string name="cancel">إلغاء</string>
     <string name="email_resend_action">إعادة ارسال</string>
+
+          <!-- Navigation Drawer Menu -->
+    <string name="menu_navigate_title">انتقل</string>
+    <string name="menu_account_title">الحساب</string>
+    <string name="menu_app_title">التطبيق</string>
+    <string name="menu_support_title">الدعم</string>
+    <string name="menu_home_title">الرئيسية</string>
+    <string name="menu_requests_title">الطلبات</string>
+    <string name="menu_messages_title">الرسائل</string>
+    <string name="menu_manage_users_title">إدارة المستخدمين</string>
+    <string name="menu_my_account_title">حسابي</string>
+    <string name="menu_language_title">اللغة</string>
+    <string name="menu_theme_title">المظهر</string>
+    <string name="menu_contact_us_title">تواصل معنا</string>
+    <string name="menu_feedback_title">المشاكل والإقتراحات</string>
+    <string name="menu_faq_title">الأسئلة الشائعة</string>
+    <string name="menu_logout_title">تسجيل الخروج</string>
 </resources>

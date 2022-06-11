@@ -1,4 +1,4 @@
-package gmail.ahmedmeabbas.rovingcareprototype
+package gmail.ahmedmeabbas.rovingcareprototype.authentication
 
 import android.content.Context
 import android.content.Intent
@@ -24,6 +24,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import gmail.ahmedmeabbas.rovingcareprototype.home.presentation.HomeActivity
+import gmail.ahmedmeabbas.rovingcareprototype.R
 import gmail.ahmedmeabbas.rovingcareprototype.databinding.ActivitySignInBinding
 import gmail.ahmedmeabbas.rovingcareprototype.util.NetworkManager
 import java.util.*
@@ -155,7 +157,7 @@ class SignInActivity : AppCompatActivity() {
             .setTitle(getString(R.string.hint_reset_password))
             .setView(resetEditText)
             .setMessage(getString(R.string.reset_password_message))
-            .setPositiveButton(getString(R.string.confirm)) { _,_ ->
+            .setPositiveButton(getString(R.string.confirm)) { _, _ ->
                 val email = resetEditText.text.toString()
                 sendPasswordResetEmail(email)
             }

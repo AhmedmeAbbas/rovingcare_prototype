@@ -1,35 +1,41 @@
-package gmail.ahmedmeabbas.rovingcareprototype
+package gmail.ahmedmeabbas.rovingcareprototype.home.presentation
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
+import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationView
+import gmail.ahmedmeabbas.rovingcareprototype.R
+import gmail.ahmedmeabbas.rovingcareprototype.authentication.SignInActivity
 import gmail.ahmedmeabbas.rovingcareprototype.databinding.ActivityHomeBinding
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHomeBinding
     private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
-        toggle = ActionBarDrawerToggle(
-            this,
-            binding.drawerLayout,
-            R.string.nav_drawer_open,
-            R.string.nav_drawer_close
-        )
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setUpGreeting()
+        setContentView(R.layout.activity_home)
+
+        val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        findViewById<NavigationView>(R.id.navigationView).setupWithNavController(navController)
+        val appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        toolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -65,9 +71,9 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setDisplayGreeting(greeting: String, displayName: String?) {
         if (displayName == null) {
-            binding.tvWelcome.text = greeting
+            //tvWelcome.text = greeting
         }
-        binding.tvWelcome.text = "$greeting, $displayName"
+        //tvWelcome.text = "$greeting, $displayName"
     }
 
     private fun logOut() {

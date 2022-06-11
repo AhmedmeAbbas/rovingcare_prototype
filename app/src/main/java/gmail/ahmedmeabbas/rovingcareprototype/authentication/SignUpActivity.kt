@@ -1,4 +1,4 @@
-package gmail.ahmedmeabbas.rovingcareprototype
+package gmail.ahmedmeabbas.rovingcareprototype.authentication
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
+import gmail.ahmedmeabbas.rovingcareprototype.R
 import gmail.ahmedmeabbas.rovingcareprototype.databinding.ActivitySignUpBinding
 import java.util.*
 

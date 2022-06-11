@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import gmail.ahmedmeabbas.rovingcareprototype.authentication.SignInActivity
 import gmail.ahmedmeabbas.rovingcareprototype.databinding.ActivityWelcomeBinding
 import java.util.*
 import java.util.concurrent.TimeUnit

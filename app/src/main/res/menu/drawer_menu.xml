@@ -1,55 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Navigate">
+    <item android:title="@string/menu_navigate_title">
         <menu>
             <item
+                android:id="@+id/homeFragment"
                 android:icon="@drawable/ic_home"
-                android:title="Home" />
+                android:title="@string/menu_home_title" />
             <item
+                android:id="@+id/requestsFragment"
                 android:icon="@drawable/ic_requests"
-                android:title="Requests" />
+                android:title="@string/menu_requests_title" />
             <item
+                android:id="@+id/messagesFragment"
                 android:icon="@drawable/ic_feedback"
-                android:title="Messages" />
+                android:title="@string/menu_messages_title" />
         </menu>
     </item>
 
-    <item android:title="Account">
+    <item android:title="@string/menu_account_title">
         <menu>
             <item
+                android:id="@+id/manageUsersFragment"
                 android:icon="@drawable/ic_people"
-                android:title="Manage Users" />
+                android:title="@string/menu_manage_users_title" />
             <item
+                android:id="@+id/myAccountFragment"
                 android:icon="@drawable/ic_settings"
-                android:title="My Account" />
+                android:title="@string/menu_my_account_title" />
         </menu>
     </item>
 
-    <item android:title="App">
+    <item android:title="@string/menu_app_title">
         <menu>
             <item
                 android:icon="@drawable/ic_language"
-                android:title="Language" />
+                android:title="@string/menu_language_title" />
             <item
                 android:icon="@drawable/ic_theme"
-                android:title="Theme" />
+                android:title="@string/menu_theme_title" />
         </menu>
     </item>
-    <item android:title="Support">
+    <item android:title="@string/menu_support_title">
         <menu>
             <item
+                android:id="@+id/contactUsFragment"
                 android:icon="@drawable/ic_phone"
-                android:title="Contact Us" />
+                android:title="@string/menu_contact_us_title" />
             <item
+                android:id="@+id/feedbackFragment"
                 android:icon="@drawable/ic_messages"
-                android:title="Give us your feedback" />
+                android:title="@string/menu_feedback_title" />
             <item
+                android:id="@+id/fAQFragment"
                 android:icon="@drawable/ic_faq"
-                android:title="FAQ" />
+                android:title="@string/menu_faq_title" />
         </menu>
     </item>
     <item
         android:icon="@drawable/ic_exit"
-        android:title="Log Out" />
+        android:title="@string/menu_logout_title" />
 </menu>
