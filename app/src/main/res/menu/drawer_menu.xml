@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/menu_navigate_title">
-        <menu>
-            <item
-                android:id="@+id/homeFragment"
-                android:icon="@drawable/ic_home"
-                android:title="@string/menu_home_title" />
-            <item
-                android:id="@+id/requestsFragment"
-                android:icon="@drawable/ic_requests"
-                android:title="@string/menu_requests_title" />
-            <item
-                android:id="@+id/messagesFragment"
-                android:icon="@drawable/ic_feedback"
-                android:title="@string/menu_messages_title" />
-        </menu>
-    </item>
-
     <item android:title="@string/menu_account_title">
         <menu>
             <item
@@ -58,6 +41,7 @@
         </menu>
     </item>
     <item
+        android:id="@+id/log_out"
         android:icon="@drawable/ic_exit"
         android:title="@string/menu_logout_title" />
 </menu>

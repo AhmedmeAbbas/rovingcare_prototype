@@ -4,23 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.TextView
-import android.widget.Toolbar
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import gmail.ahmedmeabbas.rovingcareprototype.R
 import gmail.ahmedmeabbas.rovingcareprototype.authentication.SignInActivity
-import gmail.ahmedmeabbas.rovingcareprototype.databinding.ActivityHomeBinding
-import java.util.*
-import java.util.concurrent.TimeUnit
 
 class HomeActivity : AppCompatActivity() {
-
-    private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,49 +29,21 @@ class HomeActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         findViewById<NavigationView>(R.id.navigationView).setupWithNavController(navController)
+        findViewById<BottomNavigationView>(R.id.bottomNavigation).setupWithNavController(navController)
         val appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         toolbar.setupWithNavController(navController, appBarConfiguration)
+        navController.navigate(R.id.homeFragment)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true
+        when (item.itemId) {
+            R.id.log_out -> logOut()
         }
-        return super.onOptionsItemSelected(item)
-    }
-
-    private fun setUpGreeting() {
-        val currentTime = getCurrentTime()
-        val greeting = getGreeting(currentTime)
-        val displayName = intent.getStringExtra("EXTRA_DISPLAY_NAME")
-        setDisplayGreeting(greeting, displayName)
-    }
-
-    private fun getGreeting(currentTime: Long): String {
-        var greeting = resources.getString(R.string.greeting_dafault)
-        when (currentTime) {
-            in 0..11 -> greeting = resources.getString(R.string.greeting_morning)
-            in 12..17 -> greeting = resources.getString(R.string.greeting_afternoon)
-            in 18..24 -> greeting = resources.getString(R.string.greeting_evening)
-        }
-        return greeting
-    }
-
-    private fun getCurrentTime(): Long {
-        val gmtHours = TimeUnit.MILLISECONDS.toHours(System.currentTimeMillis()) % 24
-        val offsetHours =
-            TimeUnit.MILLISECONDS.toHours(TimeZone.getDefault().rawOffset.toLong()) % 24
-        return gmtHours + offsetHours
-    }
-
-    private fun setDisplayGreeting(greeting: String, displayName: String?) {
-        if (displayName == null) {
-            //tvWelcome.text = greeting
-        }
-        //tvWelcome.text = "$greeting, $displayName"
+        return true
     }
 
     private fun logOut() {
+        Firebase.auth.signOut()
         val intent = Intent(this, SignInActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
