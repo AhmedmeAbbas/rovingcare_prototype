@@ -66,9 +66,9 @@
     <string name="menu_manage_users_title">Manage Users</string>
     <string name="menu_my_account_title">My Account</string>
     <string name="menu_language_title">Language</string>
-    <string name="menu_theme_title">Theme</string>
+    <string name="menu_dark_mode_title">Dark Mode</string>
     <string name="menu_contact_us_title">Contact Us</string>
     <string name="menu_feedback_title">Issues and Feedback</string>
-    <string name="menu_faq_title">FAQ</string>
+    <string name="menu_faq_title">Help</string>
     <string name="menu_logout_title">Log Out</string>
 </resources>

@@ -41,7 +41,7 @@
         android:label="@string/menu_feedback_title"
         tools:layout="@layout/fragment_feedback" />
     <fragment
-        android:id="@+id/fAQFragment"
+        android:id="@+id/helpFragment"
         android:name="gmail.ahmedmeabbas.rovingcareprototype.support.presentation.FAQFragment"
         android:label="@string/menu_faq_title"
         tools:layout="@layout/fragment_faq" />

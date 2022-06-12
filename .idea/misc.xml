@@ -29,8 +29,14 @@
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/ic_person_hint.xml" value="0.2265" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/ic_phone.xml" value="0.2265" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/ic_phone_focused.xml" value="0.2265" />
+        <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/ic_theme.xml" value="0.2455" />
+        <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/menu_language_switch.xml" value="0.1695" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/sign_in_button_background.xml" value="0.2265" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/spin_animation.xml" value="0.2265" />
+        <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/switch_thumb.xml" value="0.1695" />
+        <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/switch_thumb_theme.xml" value="0.1695" />
+        <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/switch_track.xml" value="0.2455" />
+        <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/drawable/switch_track_theme.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
@@ -47,10 +53,11 @@
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/layout/fragment_my_account.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/layout/fragment_requests.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/layout/nav_header.xml" value="0.253125" />
+        <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/layout/switch_language.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/layout/test.xml" value="0.253125" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/layout/test_layout.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
-        <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/menu/drawer_menu.xml" value="0.253125" />
+        <entry key="..\:/AndroidStudioProjects/RovingCarePrototype/app/src/main/res/menu/drawer_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

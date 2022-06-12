@@ -67,9 +67,9 @@
     <string name="menu_manage_users_title">إدارة المستخدمين</string>
     <string name="menu_my_account_title">حسابي</string>
     <string name="menu_language_title">اللغة</string>
-    <string name="menu_theme_title">المظهر</string>
+    <string name="menu_dark_mode_title">الوضع الليلي</string>
     <string name="menu_contact_us_title">تواصل معنا</string>
     <string name="menu_feedback_title">المشاكل والإقتراحات</string>
-    <string name="menu_faq_title">الأسئلة الشائعة</string>
+    <string name="menu_faq_title">مساعدة</string>
     <string name="menu_logout_title">تسجيل الخروج</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:title="@string/menu_account_title">
         <menu>
@@ -17,11 +18,15 @@
     <item android:title="@string/menu_app_title">
         <menu>
             <item
+                android:id="@+id/menu_language"
                 android:icon="@drawable/ic_language"
-                android:title="@string/menu_language_title" />
+                android:title="@string/menu_language_title"
+                app:actionViewClass="android.widget.ToggleButton"/>
             <item
+                android:id="@+id/menu_theme"
                 android:icon="@drawable/ic_theme"
-                android:title="@string/menu_theme_title" />
+                android:title="@string/menu_dark_mode_title"
+                app:actionViewClass="androidx.appcompat.widget.SwitchCompat"/>
         </menu>
     </item>
     <item android:title="@string/menu_support_title">
@@ -35,7 +40,7 @@
                 android:icon="@drawable/ic_messages"
                 android:title="@string/menu_feedback_title" />
             <item
-                android:id="@+id/fAQFragment"
+                android:id="@+id/helpFragment"
                 android:icon="@drawable/ic_faq"
                 android:title="@string/menu_faq_title" />
         </menu>
