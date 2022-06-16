@@ -40,7 +40,6 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-        auth.useAppLanguage()
         setUpViews()
     }
 
@@ -178,6 +177,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun sendVerificationEmail(currentUser: FirebaseUser?) {
+        auth.useAppLanguage()
         currentUser!!.sendEmailVerification()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {

@@ -40,7 +40,6 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-        auth.useAppLanguage()
         setUpViews()
     }
 
@@ -167,6 +166,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun sendPasswordResetEmail(email: String) {
+        auth.useAppLanguage()
         auth.sendPasswordResetEmail(email)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {

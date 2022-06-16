@@ -53,6 +53,9 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.2"
 
+    // Architecture Components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+
     // Firebase BoM
     // When using BoM, don't specify versions in Firebase dependencies
     implementation platform('com.google.firebase:firebase-bom:30.0.2')
@@ -75,4 +78,7 @@ dependencies {
 
     // LeakCanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
+
+    // DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
 }
