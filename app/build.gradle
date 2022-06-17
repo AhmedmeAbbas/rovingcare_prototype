@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'kotlin-kapt'
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -76,9 +78,10 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.2"
     implementation "androidx.navigation:navigation-ui-ktx:2.4.2"
 
+    // Hilt
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    kapt "com.google.dagger:hilt-android-compiler:2.38.1"
+
     // LeakCanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
-
-    // DataStore
-    implementation "androidx.datastore:datastore-preferences:1.0.0"
 }

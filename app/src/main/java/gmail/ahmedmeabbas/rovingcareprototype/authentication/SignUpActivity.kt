@@ -1,6 +1,5 @@
 package gmail.ahmedmeabbas.rovingcareprototype.authentication
 
-import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
@@ -10,10 +9,7 @@ import android.text.TextPaint
 import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
-import android.util.Log
-import android.util.TypedValue
 import android.view.View
-import androidx.annotation.AttrRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
@@ -22,18 +18,19 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
+import dagger.hilt.android.AndroidEntryPoint
 import gmail.ahmedmeabbas.rovingcareprototype.R
 import gmail.ahmedmeabbas.rovingcareprototype.databinding.ActivitySignUpBinding
+import gmail.ahmedmeabbas.rovingcareprototype.utils.ThemeManager
 import java.util.*
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var auth: FirebaseAuth
-
-    companion object {
-        private const val TAG = "SignUpActivity"
-    }
+    @Inject lateinit var themeManager: ThemeManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +60,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun setUpEditTextColor() {
-        val primaryColor = getColorFromAttr(androidx.appcompat.R.attr.colorPrimary)
+        val primaryColor = themeManager.colorPrimary
         val hintColor = ContextCompat.getColor(this, R.color.hint_color)
         binding.etFirstName.setOnFocusChangeListener { _, hasFocus ->
             val color = if (hasFocus) primaryColor else hintColor
@@ -104,7 +101,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun setUpToSText() {
         val text = resources.getString(R.string.ToS)
-        val textColor = getColorFromAttr(androidx.appcompat.R.attr.colorPrimary)
+        val textColor = themeManager.colorPrimary
         var click1Span1 = 0
         var click1Span2 = 0
         var click2Span1 = 0
@@ -151,12 +148,10 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun signUp(email: String, password: String, confirmPassword: String) {
-        Log.d(TAG, "signUp: $email")
         if (!validateForm()) {
             return
         }
         if (!validatePassword(password, confirmPassword)) {
-            Log.d(TAG, "validateForm: Invalid passwords")
             showSnackBar(resources.getString(R.string.passwords_do_not_match))
             return
         }
@@ -165,11 +160,9 @@ class SignUpActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "signUpWithEmail: Successful")
                     val currentUser = auth.currentUser
                     updateUserProfile(currentUser)
                 } else {
-                    Log.w(TAG, "signUp: Failure", task.exception)
                     stopLoading()
                     showSnackBar(task.exception?.message!!)
                 }
@@ -181,14 +174,12 @@ class SignUpActivity : AppCompatActivity() {
         currentUser!!.sendEmailVerification()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "sendVerificationEmail: Email sent")
                     Snackbar.make(
                         binding.root,
                         resources.getString(R.string.verification_email_sent),
                         Snackbar.LENGTH_LONG
                     ).show()
                 } else {
-                    Log.w(TAG, "sendVerificationEmail: Failure", task.exception)
                     resendEmailVerification(currentUser)
                 }
                 stopLoading()
@@ -204,7 +195,6 @@ class SignUpActivity : AppCompatActivity() {
         user!!.updateProfile(profileUpdates)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "updateUserProfile: Success")
                     sendVerificationEmail(user)
                 }
             }
@@ -270,14 +260,5 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun stopLoading() {
         binding.btnSignUp.progressBar.visibility = View.GONE
-    }
-
-    private fun Context.getColorFromAttr(
-        @AttrRes attrColor: Int,
-        typedValue: TypedValue = TypedValue(),
-        resolveRefs: Boolean = true
-    ): Int {
-        theme.resolveAttribute(attrColor, typedValue, resolveRefs)
-        return typedValue.data
     }
 }

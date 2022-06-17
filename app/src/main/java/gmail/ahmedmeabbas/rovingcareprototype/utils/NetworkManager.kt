@@ -1,4 +1,4 @@
-package gmail.ahmedmeabbas.rovingcareprototype.util
+package gmail.ahmedmeabbas.rovingcareprototype.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

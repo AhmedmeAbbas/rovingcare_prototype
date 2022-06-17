@@ -3,11 +3,11 @@
     <style name="Theme.RovingCarePrototype" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/logo_blue</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/logo_blue_variant</item>
         <item name="colorOnPrimary">@color/light_background</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/logo_green</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondaryVariant">@color/logo_green_variant</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimary</item>

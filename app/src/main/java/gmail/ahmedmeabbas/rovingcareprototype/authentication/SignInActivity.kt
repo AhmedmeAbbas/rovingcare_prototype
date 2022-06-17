@@ -1,6 +1,5 @@
 package gmail.ahmedmeabbas.rovingcareprototype.authentication
 
-import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
@@ -11,12 +10,9 @@ import android.text.TextPaint
 import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
-import android.util.Log
-import android.util.TypedValue
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import androidx.annotation.AttrRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
@@ -24,16 +20,21 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import dagger.hilt.android.AndroidEntryPoint
 import gmail.ahmedmeabbas.rovingcareprototype.home.presentation.HomeActivity
 import gmail.ahmedmeabbas.rovingcareprototype.R
 import gmail.ahmedmeabbas.rovingcareprototype.databinding.ActivitySignInBinding
-import gmail.ahmedmeabbas.rovingcareprototype.util.NetworkManager
+import gmail.ahmedmeabbas.rovingcareprototype.utils.NetworkManager
+import gmail.ahmedmeabbas.rovingcareprototype.utils.ThemeManager
 import java.util.*
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SignInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var auth: FirebaseAuth
+    @Inject lateinit var themeManager: ThemeManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +52,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun setUpEditTextColor() {
-        val primaryColor = getColorFromAttr(androidx.appcompat.R.attr.colorPrimary)
+        val primaryColor = themeManager.colorPrimary
         val hintColor = ContextCompat.getColor(this, R.color.hint_color)
         binding.etEmailSignIn.setOnFocusChangeListener { _, hasFocus ->
             val color = if (hasFocus) primaryColor else hintColor
@@ -89,15 +90,13 @@ class SignInActivity : AppCompatActivity() {
 
     private fun setUpSignUpText() {
         val text = resources.getString(R.string.sign_up_text)
-        val textColor = getColorFromAttr(androidx.appcompat.R.attr.colorPrimary)
+        val textColor = themeManager.colorPrimary
         var span1 = 0
         var span2 = 0
         if (Locale.getDefault().language.equals("en")) {
-            span1 = 23
-            span2 = 30
+            span1 = 23; span2 = 30
         } else if (Locale.getDefault().language.equals("ar")) {
-            span1 = 15
-            span2 = 25
+            span1 = 15; span2 = 25
         }
         val spannableString = SpannableString(text)
         val clickableSpan = object : ClickableSpan() {
@@ -119,7 +118,7 @@ class SignInActivity : AppCompatActivity() {
 
     private fun setUpForgotPasswordText() {
         val text = resources.getString(R.string.forgot_password)
-        val textColor = getColorFromAttr(androidx.appcompat.R.attr.colorPrimary)
+        val textColor = themeManager.colorPrimary
         val span1 = 0
         var span2 = 0
         if (Locale.getDefault().language.equals("en")) {
@@ -150,7 +149,7 @@ class SignInActivity : AppCompatActivity() {
     private fun showResetAlertDialog(){
         val resetEditText = EditText(this)
         resetEditText.scrollBarSize = 25
-        resetEditText.highlightColor = getColorFromAttr(androidx.appcompat.R.attr.colorPrimary)
+        resetEditText.highlightColor = themeManager.colorPrimary
         resetEditText.isSingleLine = true
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.hint_reset_password))
@@ -172,14 +171,12 @@ class SignInActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     showSnackBar(resources.getString(R.string.email_reset_success))
                 } else {
-                    Log.w(TAG, "sendPasswordResetEmail: Failure", task.exception)
                     showSnackBar(resources.getString(R.string.invalid_email_address))
                 }
             }
     }
 
     private fun signIn(email: String, password: String) {
-        Log.d(TAG, "signIn: $email")
         if (!validateForm()) {
             return
         }
@@ -188,11 +185,9 @@ class SignInActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "signInWithEmail: Success")
                     val user = auth.currentUser!!
                     checkVerificationAndNavigate(user)
                 } else {
-                    Log.w(TAG, "signInWithEmail: Failure", task.exception)
                     stopLoading()
                     showSnackBar(resources.getString(R.string.invalid_email_or_password))
                 }
@@ -200,14 +195,12 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun checkVerificationAndNavigate(user: FirebaseUser) {
-        Log.d(TAG, "checkVerificationAndNavigate: ${user.email}")
         val isVerified = user.isEmailVerified
         stopLoading()
         if (!isVerified) {
             showSnackBar(resources.getString(R.string.email_not_verified))
             return
         }
-        Log.d(TAG, "checkVerificationAndNavigate: Verified")
         navigateToWelcomeActivity()
     }
 
@@ -233,7 +226,6 @@ class SignInActivity : AppCompatActivity() {
         intent.putExtra("EXTRA_DISPLAY_NAME", displayName)
         startActivity(intent)
         this@SignInActivity.finish()
-        Log.d(TAG, "navigateToWelcomeActivity: Launched Activity")
     }
 
     private fun showSnackBar(message: String) {
@@ -246,29 +238,6 @@ class SignInActivity : AppCompatActivity() {
 
     private fun stopLoading() {
         binding.btnSignIn.progressBar.visibility = View.INVISIBLE
-    }
-
-    private fun Context.getColorFromAttr(
-        @AttrRes attrColor: Int,
-        typedValue: TypedValue = TypedValue(),
-        resolveRefs: Boolean = true
-    ): Int {
-        theme.resolveAttribute(attrColor, typedValue, resolveRefs)
-        return typedValue.data
-    }
-
-    private fun clearSpannableStrings() {
-        binding.tvSignUpText.text = ""
-        binding.tvForgotPassword.text = ""
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        clearSpannableStrings()
-    }
-
-    companion object {
-        private const val TAG = "SignInActivity"
     }
 }
 

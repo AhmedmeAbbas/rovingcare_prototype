@@ -4,12 +4,18 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.os.Build
 import android.os.LocaleList
+import gmail.ahmedmeabbas.rovingcareprototype.utils.PreferencesManager
 import java.util.*
 
 class CustomContextWrapper(base: Context): ContextWrapper(base) {
 
     companion object {
-        fun wrap(context: Context, newLocale: Locale): ContextWrapper {
+        fun wrap(context: Context): ContextWrapper {
+            val defaultLanguage = Locale.getDefault().language
+            val newLanguage =
+                PreferencesManager(context).getSavedString(PreferencesManager.SHARED_PREFS_LANGUAGE)
+                    ?: defaultLanguage
+            val newLocale = Locale(newLanguage)
             val config = context.resources.configuration
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
